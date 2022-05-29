@@ -12,6 +12,13 @@ namespace u21589276_HW03.Controllers
         {
             return View();
         }
+
+        public ActionResult About()
+        {
+            ViewBag.Message = "Biography: Mila Mbopha";
+
+            return View();
+        }
         public ActionResult Files()
         {
             ViewBag.Message = "Your Files.";
@@ -21,24 +28,21 @@ namespace u21589276_HW03.Controllers
 
             return View(files);
         }
+
         public ActionResult Images()
         {
             ViewBag.Message = "Your Files.";
 
             return View();
         }
+
         public ActionResult Videos()
         {
             ViewBag.Message = "Your Files.";
 
             return View();
         }
-        public ActionResult About()
-        {
-            ViewBag.Message = "Biography: Mila Mbopha";
-
-            return View();
-        }
+        
 
     }
 }
