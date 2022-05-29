@@ -12,19 +12,30 @@ namespace u21589276_HW03.Controllers
         {
             return View();
         }
+        public ActionResult Files()
+        {
+            ViewBag.Message = "Your Files.";
 
+            return View();
+        }
+        public ActionResult Images()
+        {
+            ViewBag.Message = "Your Files.";
+
+            return View();
+        }
+        public ActionResult Videos()
+        {
+            ViewBag.Message = "Your Files.";
+
+            return View();
+        }
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Biography: Mila Mbopha";
 
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }
