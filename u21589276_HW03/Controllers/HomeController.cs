@@ -16,7 +16,10 @@ namespace u21589276_HW03.Controllers
         {
             ViewBag.Message = "Your Files.";
 
-            return View();
+            List<Models.FileModel> files = new List<Models.FileModel>();
+            files.Add(new Models.FileModel { FileName = "Mila" });
+
+            return View(files);
         }
         public ActionResult Images()
         {
