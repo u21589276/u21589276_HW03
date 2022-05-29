@@ -9,8 +9,22 @@
     <div class="col-sm-8">
         <h4>Description</h4>
         <p>
-            This application will 
+            This is a media upload application, which will allow the user to select the media file type from the home page and upload
+            their media, which will then be save in the applicatioon solution. the differnt types or media files that can be uploaded 
+            are; document files, videos and images. These media files can then be viewed on differnt pages with their respective information.
+            The files can be deleted or downloaded from their specific pages that they are viewed on.
         </p>
     </div>
-    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h4>Option Selection</h4>
+
+        <form method="post">
+            <label>Document</label>&nbsp;<input type="radio" name="file-type" id="doc" value="document" /><br />
+            <label>Image</label>&nbsp;<input type="radio" name="file-type" id="image" value="Image" /><br />
+            <label>Video</label>&nbsp;<input type="radio" name="file-type" id="vid" value="Video" /><br />
+
+            <input type="file" value="Browse" /><br />
+            <input type="submit" value="sumbit" />
+        </form>
+    </div>
 </div>
