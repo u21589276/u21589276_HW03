@@ -10,9 +10,15 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
+    <tr style="background-color:black; color:white;">
         <th>
             @Html.DisplayNameFor(model => model.FileName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DownloadOption)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeleteOption)
         </th>
         <th></th>
     </tr>
@@ -23,7 +29,11 @@
             @Html.DisplayFor(modelItem => item.FileName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) 
+            @Html.DisplayFor(modelItem => item.DownloadOption)
+            @Html.ActionLink("Download", "Download", new { /* id=item.PrimaryKey */ })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeleteOption)
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>
