@@ -23,9 +23,9 @@ namespace u21589276_HW03.Controllers
         {
             ViewBag.Message = "Your Files.";
 
+            //add list to image view
             List<Models.FileModel> files = new List<Models.FileModel>();
-            files.Add(new Models.FileModel { FileName = "Mila" });
-
+           
             return View(files);
         }
 
@@ -33,12 +33,18 @@ namespace u21589276_HW03.Controllers
         {
             ViewBag.Message = "Your Files.";
 
+            //add list to image view
+            List<Models.FileModel> files = new List<Models.FileModel>();
+
             return View();
         }
 
         public ActionResult Videos()
         {
             ViewBag.Message = "Your Files.";
+
+            //add list to image view
+            List<Models.FileModel> files = new List<Models.FileModel>();
 
             return View();
         }
