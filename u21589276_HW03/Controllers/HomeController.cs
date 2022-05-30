@@ -19,7 +19,7 @@ namespace u21589276_HW03.Controllers
         [HttpPost]
         public ActionResult Index(HttpPostedFileBase fileupload)//INSIDE HOME
         {
-            
+      
             if (fileupload != null && fileupload.ContentLength > 0)
             {
                 var fileName = Path.GetFileName(fileupload.FileName);
