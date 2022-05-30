@@ -16,5 +16,9 @@ namespace u21589276_HW03.Models
 
         [Display(Name = "Delete Option")]
         public string DeleteOption { get; set; }
+
+        [Required(ErrorMessage = "Please select file.")]
+        [Display(Name = "Browse File")]
+        public HttpPostedFileBase[] Files { get; set; }
     }
 }

@@ -200,9 +200,9 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\File\Files.cshtml" />
     <Content Include="Views\Image\Image.cshtml" />
     <Content Include="Views\Video\Videos.cshtml" />
+    <Content Include="Views\File\Files.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
