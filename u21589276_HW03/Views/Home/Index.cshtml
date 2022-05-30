@@ -10,21 +10,25 @@
         <h4>Description</h4>
         <p>
             This is a media upload application, which will allow the user to select the media file type from the home page and upload
-            their media, which will then be save in the applicatioon solution. the differnt types or media files that can be uploaded 
+            their media, which will then be save in the applicatioon solution. the differnt types or media files that can be uploaded
             are; document files, videos and images. These media files can then be viewed on differnt pages with their respective information.
             The files can be deleted or downloaded from their specific pages that they are viewed on.
         </p>
     </div>
+
     <div class="col-sm-4">
         <h4>Option Selection</h4><br />
+            <div class="form-horizontal">
+                @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <label>Document</label> <input type="radio" name="file-type" id="doc" value="document" /><br />
+                    <label>Image</label> <input type="radio" name="file-type" id="image" value="Image" /><br />
+                    <label>Video</label> <input type="radio" name="file-type" id="vid" value="Video" /><br /><br />
 
-        <form method="post">
-            <label>Document</label>&nbsp;<input type="radio" name="file-type" id="doc" value="document" /><br />
-            <label>Image</label>&nbsp;<input type="radio" name="file-type" id="image" value="Image" /><br />
-            <label>Video</label>&nbsp;<input type="radio" name="file-type" id="vid" value="Video" /><br /><br />
+                    <input type="file" name="fileupload" /><br />
+                    <input type="submit" name="submit" value="Upload" />
 
-            <input type="file" name="fileupload" id="fileUp" value="Browse" /><br />
-            <input type="submit" name="submit" id="submitbtn" value="sumbit" />
-        </form>
+                }
+            </div>
     </div>
 </div>
