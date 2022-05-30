@@ -11,25 +11,25 @@
 <p>...Media/Images</p>
 
 <br />
-<div class="container">
-    <div class="row" style="background-color: lightslategray; padding:20px;">
+    <div class="row" style="background-color: lightgrey; padding:20px; grid-row-gap:20px">
 
         @foreach (FileModel file in Model)
         {
         <div class="col-sm-4">
-            <div>
-                <img src="~/Media/Images/@file.FileName" alt="img" width="50%" />
-            </div>
+            <div class="card" style="width: 30rem;">
+                <img src="~/Media/Images/@file.FileName" alt="img" width="100%" />
+                <div class="card-body">
+                    <p>@file.FileName</p>
 
-            <p>@file.FileName</p>
-            <button style="background-color: lightgreen; border-color: black; border-width: 0.1pt; border-radius: 10px; text-decoration: none;">
-                @Html.ActionLink("Download", "DownloadFile", new { fileName = file.FileName })
-            </button>&nbsp;
-            <button style="background-color: palevioletred; border-color: black; border-width: 0.1pt; border-radius: 10px; text-decoration:none; ">
-                @Html.ActionLink("DELETE", "DeleteFile", new { fileName = file.FileName },
-                new { onclick = "return confirm('Are you sure you wish to delete this?');" })
-            </button>
+                    <button style="background-color: lightgreen; border-color: black; border-width: 0.1pt; border-radius: 10px; text-decoration: none;">
+                        @Html.ActionLink("Download", "DownloadFile", new { fileName = file.FileName })
+                    </button>&nbsp;
+                    <button style="background-color: palevioletred; border-color: black; border-width: 0.1pt; border-radius: 10px; text-decoration:none; ">
+                        @Html.ActionLink("DELETE", "DeleteFile", new { fileName = file.FileName },
+                        new { onclick = "return confirm('Are you sure you wish to delete this?');" })
+                    </button>
+                </div>
+            </div>
         </div>
         }
     </div>
-</div>

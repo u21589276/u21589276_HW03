@@ -13,9 +13,11 @@ namespace u21589276_HW03.Controllers
         // GET: File
         public ActionResult Files()
         {
-            //Fetch all files in the Folder (Directory).
+            //Fetch all files in the Folders.
 
             string[] filePaths = Directory.GetFiles(Server.MapPath("~/Media/Documents/"));
+            string[] filePathsImg = Directory.GetFiles(Server.MapPath("~/Media/Images/"));
+            string[] filePathsVid = Directory.GetFiles(Server.MapPath("~/Media/Videos/"));
 
             List<FileModel> files = new List<FileModel>();
 
@@ -23,6 +25,17 @@ namespace u21589276_HW03.Controllers
             {
                 files.Add(new FileModel { FileName = Path.GetFileName(filePath) });
             }
+
+            foreach (string filePath in filePathsImg)
+            {
+                files.Add(new FileModel { FileName = Path.GetFileName(filePath) });
+            }
+
+            foreach (string filePath in filePathsVid)
+            {
+                files.Add(new FileModel { FileName = Path.GetFileName(filePath) });
+            }
+
             return View(files);
         }
         public FileResult DownloadFile(string fileName)
