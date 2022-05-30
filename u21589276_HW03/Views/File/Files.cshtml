@@ -11,6 +11,7 @@
 }
 
 <h2>Files</h2>
+<p>...u21589276_HW03/Media</p>
 
 <table class="table table-condensed table-hover">
     <thead style="position: sticky;top: 0">
@@ -23,10 +24,6 @@
     @foreach (FileModel file in Model)
     {
         <tr>
-            @*
-                Default >> @Html.DisplayFor(modelItem => file.FileName)
-            *@
-
             <td>@file.FileName</td>
             <td>
                 <button style="background-color: lightgreen; border-color:black;">

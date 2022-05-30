@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
+using u21589276_HW03.Models;
 
 namespace u21589276_HW03.Controllers
 {
@@ -12,7 +13,18 @@ namespace u21589276_HW03.Controllers
         // GET: Image
         public ActionResult Image()
         {
-            return View();
+            //Fetch all files in the Folder (Directory).
+
+            string[] filePaths = Directory.GetFiles(Server.MapPath("~/Media/Images/"));
+
+            List<FileModel> files = new List<FileModel>();
+
+            foreach (string filePath in filePaths)
+            {
+                files.Add(new FileModel { FileName = Path.GetFileName(filePath) });
+            }
+            return View(files);
+            
         }
 
         public FileResult DownloadFile(string fileName)
@@ -25,9 +37,16 @@ namespace u21589276_HW03.Controllers
 
             return File(bytes, "application/octet-stream", fileName);
         }
-        public ActionResult DeleteFile()
+        public ActionResult DeleteFile(string fileName)
         {
-            return View();
+            string path = Server.MapPath("~/Media/Images/") + fileName;
+
+            byte[] bytes = System.IO.File.ReadAllBytes(path);
+
+            System.IO.File.Delete(path);
+
+            return RedirectToAction("Image");
+         
         }
     }
 }

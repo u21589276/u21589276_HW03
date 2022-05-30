@@ -17,9 +17,6 @@ namespace u21589276_HW03.Controllers
 
             string[] filePaths = Directory.GetFiles(Server.MapPath("~/Media/Documents/"));
 
-            //Copy File names to Model collection.
-            //The return below returns to the list here.
-
             List<FileModel> files = new List<FileModel>();
 
             foreach (string filePath in filePaths)

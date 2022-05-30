@@ -1,7 +1,35 @@
 ﻿
+@using u21589276_HW03.Models
+@model List<FileModel>
+
+
 @{
     ViewBag.Title = "Image";
 }
 
 <h2>Image Files</h2>
+<p>...Media/Images</p>
 
+<br />
+<div class="container">
+    <div class="row" style="background-color: lightslategray; padding:20px;">
+
+        @foreach (FileModel file in Model)
+        {
+        <div class="col-sm-4">
+            <div class="display-field">
+                <img src="@Url.Content(@file.FileName)" alt="img" />
+            </div>
+
+            <p>@file.FileName</p>
+            <button style="background-color: lightgreen; border-color: black; border-width: 0.1pt; border-radius: 10px; text-decoration: none;">
+                @Html.ActionLink("Download", "DownloadFile", new { fileName = file.FileName })
+            </button>
+            <button style="background-color: palevioletred; border-color: black; border-width: 0.1pt; border-radius: 10px; text-decoration:none; ">
+                @Html.ActionLink("DELETE", "DeleteFile", new { fileName = file.FileName },
+                new { onclick = "return confirm('Are you sure you wish to delete this?');" })
+            </button>
+        </div>
+        }
+    </div>
+</div>
