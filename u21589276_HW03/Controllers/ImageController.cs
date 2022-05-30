@@ -7,13 +7,14 @@ using System.IO;
 
 namespace u21589276_HW03.Controllers
 {
-    public class FileController : Controller
+    public class ImageController : Controller
     {
-        // GET: File
-        public ActionResult Files()
+        // GET: Image
+        public ActionResult Image()
         {
             return View();
         }
+
         public FileResult DownloadFile(string fileName)
         {
             string path = Server.MapPath("~/Media/Images/") + fileName;

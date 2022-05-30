@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.IO;
 
 namespace u21589276_HW03.Controllers
 {
-    public class FileController : Controller
+    public class VideoController : Controller
     {
-        // GET: File
-        public ActionResult Files()
+        // GET: Video
+        public ActionResult Videos()
         {
             return View();
         }
+
         public FileResult DownloadFile(string fileName)
         {
-            string path = Server.MapPath("~/Media/Images/") + fileName;
+            string path = Server.MapPath("~/Media/Videos/") + fileName;
 
             //Read the File data into Byte Array.
             //Use a byte array becasue of octet-stream.

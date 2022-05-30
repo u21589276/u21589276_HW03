@@ -15,7 +15,6 @@ namespace u21589276_HW03.Controllers
             return View();
         }
 
-
         //File Upload Recieve
         [HttpPost]
         public ActionResult Index(HttpPostedFileBase fileupload)//INSIDE HOME
@@ -38,38 +37,6 @@ namespace u21589276_HW03.Controllers
 
             return View();
         }
-
-        //============================================================================
-        public ActionResult Files()
-        {
-            ViewBag.Message = "Your Files.";
-
-            //add list to image view
-            List<Models.FileModel> files = new List<Models.FileModel>();
-           
-            return View(files);
-        }
-
-        public ActionResult Images()
-        {
-            ViewBag.Message = "Your Files.";
-
-            //add list to image view
-            List<Models.FileModel> files = new List<Models.FileModel>();
-
-            return View();
-        }
-
-        public ActionResult Videos()
-        {
-            ViewBag.Message = "Your Files.";
-
-            //add list to image view
-            List<Models.FileModel> files = new List<Models.FileModel>();
-
-            return View();
-        }
-        
 
     }
 }
