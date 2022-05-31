@@ -17,12 +17,9 @@
     {
         <div class="col-sm-4">
             <div class="card" style="width: 30rem;">
-
                 <a href="~/Media/Images/@file.FileName" data-fancybox="group" data-caption="This image has a caption 1">
                     <img src="~/Media/Images/@file.FileName" alt="img" width="100%" />
                 </a>
-
-                
                 <div class="card-body">
                     <p>@file.FileName</p>
 
@@ -41,19 +38,14 @@
 
 <script>
     $('[data-fancybox]').fancybox({
-        // Options will go here
         buttons: [
             'close'
         ],
+
         wheel: false,
         transitionEffect: "slide",
-        // thumbs          : false,
-        // hash            : false,
         loop: true,
-        // keyboard        : true,
-        toolbar: false,
-        // animationEffect : false,
-        // arrows          : true,
+        toolbar: false,      
         clickContent: false
     });
 </script>
