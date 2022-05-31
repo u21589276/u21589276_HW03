@@ -17,17 +17,46 @@ namespace u21589276_HW03.Controllers
 
         //File Upload Recieve
         [HttpPost]
-        public ActionResult Index(HttpPostedFileBase fileupload)//INSIDE HOME
+        public ActionResult Index(HttpPostedFileBase fileupload, string fileTypeRad)//INSIDE HOME
         {
       
-            if (fileupload != null && fileupload.ContentLength > 0)
+            if(fileTypeRad == "Document")
             {
-                var fileName = Path.GetFileName(fileupload.FileName);
+                if (fileupload != null && fileupload.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(fileupload.FileName);
 
-                var path = Path.Combine(Server.MapPath("~/Media/Documents"), fileName);
+                    var path = Path.Combine(Server.MapPath("~/Media/Documents"), fileName);
 
-                fileupload.SaveAs(path);
+                    fileupload.SaveAs(path);
+                }
+               
             }
+            else if(fileTypeRad == "Image")
+            {
+                //upload to Image
+                if (fileupload != null && fileupload.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(fileupload.FileName);
+
+                    var path = Path.Combine(Server.MapPath("~/Media/Images"), fileName);
+
+                    fileupload.SaveAs(path);
+                }
+            }
+            else if (fileTypeRad == "Video")
+            {
+                //upload to video folder
+                if (fileupload != null && fileupload.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(fileupload.FileName);
+
+                    var path = Path.Combine(Server.MapPath("~/Media/Videos"), fileName);
+
+                    fileupload.SaveAs(path);
+                }
+            }
+
             return RedirectToAction("Index");
         }
 
