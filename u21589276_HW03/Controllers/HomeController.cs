@@ -19,9 +19,10 @@ namespace u21589276_HW03.Controllers
         [HttpPost]
         public ActionResult Index(HttpPostedFileBase fileupload, string fileTypeRad)//INSIDE HOME
         {
-      
+            //if statement to determine which folder to upload the file to depending on the radioBtn selected
             if(fileTypeRad == "Document")
             {
+                //upoload to Document folder
                 if (fileupload != null && fileupload.ContentLength > 0)
                 {
                     var fileName = Path.GetFileName(fileupload.FileName);
@@ -34,7 +35,7 @@ namespace u21589276_HW03.Controllers
             }
             else if(fileTypeRad == "Image")
             {
-                //upload to Image
+                //upload to Image folder
                 if (fileupload != null && fileupload.ContentLength > 0)
                 {
                     var fileName = Path.GetFileName(fileupload.FileName);
