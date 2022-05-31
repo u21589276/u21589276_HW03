@@ -31,8 +31,6 @@ namespace u21589276_HW03.Controllers
         {
             string path = Server.MapPath("~/Media/Images/") + fileName;
 
-            //Read the File data into Byte Array.
-            //Use a byte array becasue of octet-stream.
             byte[] bytes = System.IO.File.ReadAllBytes(path);
 
             return File(bytes, "application/octet-stream", fileName);
