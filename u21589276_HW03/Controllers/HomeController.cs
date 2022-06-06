@@ -63,7 +63,7 @@ namespace u21589276_HW03.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Biography: Mila Mbopha";
+            ViewBag.Message = "Biography";
 
             return View();
         }

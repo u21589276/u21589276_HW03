@@ -13,6 +13,14 @@
     var myage = currentdate - bDate;
 }
 
+<style>
+    img {
+        box-shadow: 1px 3px 25px 6px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 1px 3px 25px 6px rgba(0,0,0,0.75);
+        -moz-box-shadow: 1px 3px 25px 6px rgba(0,0,0,0.75);
+    }
+</style>
+
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
@@ -52,7 +60,17 @@
             </p>
         </div>
         <div class="col-sm-6">
-            <center><img src="~/BioImage/Mila.jpg" alt="myIMG" width="50%" style="border-radius:60px;" /></center>
+            <center>
+                <h3>Mila Mbopha</h3>
+                <img src="~/BioImage/Mila.jpg" alt="myIMG" width="60%" style="border-radius:60px;" />
+                <br /><br />
+                <p>Full Name: Mila Mbopha</p>
+                <p>Age: @myage</p>
+                <p>Occupation: Student</p>
+                <p>Year of Study: 2</p>
+                <p>Institution: University of Pretoria</p>
+                <p>Partime Job: Musician, Artist</p>
+            </center>
         </div>
     </div>
 </div>
