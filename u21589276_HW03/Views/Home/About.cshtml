@@ -4,17 +4,35 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
+@{
+   
+    var bDate = 2002;
+
+    var currentdate = Convert.ToInt32(DateTime.Now.Year);
+ 
+    var myage = currentdate - bDate;
+}
+
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
             <h4>Place of Birth</h4>
             <p>
-                
+                Mila Mbopha was born in the Eastern Cape in the Town of Umthatha on 23 May 2002, born in the small Ebeneza Clinic.
+                He is the last born at home, with One brother who comes before him, preceding him by 2 years.
+                Mila grew up in the small village of Mvuzi, Mhlokwana which is situated just a few kilometers away from
+                the town of Mount Frere in the Eastern Cape.
             </p>
             <br />
             <h4>Studies</h4>
             <p>
-                This is me. I am 20 years of age and I am studying at the University Of Pretoria.
+                Mila started schooling in Mt Frere, where he attended Mount Frere Community School for his first 2 years of school
+                before moving to the town of Port Edward in the Southern Kwazulu-Natal where he attended Port-Edward pre-School and
+                Primary school, till he reached grade 4, where he then move to Ramsgate in Kwazulu-Natal, and continued the rest of
+                his primary at South City Christian Schools till Grade 6. There After he recieved a bursary for rugby at Creston College
+                in Oslo Beach, Port Shepstone where he finished of grade 7 and moved into his highschool. He completed his Matric at Creston
+                College with a Bachelors Degree pass in the year of 2020.
+                Mila is currently @myage years of age and I am studying at the University Of Pretoria.
                 I am Studying BIT Information Systems and I am eager to learn. I am currently in
                 my second year and I am really looking forward to completing my degree in time.
                 I am also currently a part time music producer and dj visit my youtube page using
@@ -23,12 +41,17 @@
                 also learning new skills at the same time. There is a lot I can say about my self and
                 why I am who I am today, but i'll leave it there for now
             </p>
+            <br />
             <h4>My music career</h4>
             <p>
-                Also know as Dj M-Nza, I am a Dj, music artist and producer from South Africa, Born in the Eastern cape. 
+                Also know as Dj M-Nza, Mila is a Dj, music artist and producer from South Africa, Born in the Eastern cape.
                 He produces music in the genre of house, Dance and amapiano working solely to amuse and let the people enjoy
-                the majestic sounds and combinations of musical instruments created by him.
-                He is a growing musician with bright musical future ahead of him.
+                the majestic sounds and combinations of musical instruments created by him. He has been in the music industry
+                for the last two years and has since grown in his talent, and reaching out to a currently growing fan base. This
+                can be attested by his latest amapiano single released on 15 April 2022, which has gone over 50 000 streams world
+                wide within one month. comparing this to his previouse releases, We can certaily say that there has been a great
+                increase in fan base. He is a growing musician with bright musical future ahead of him, and he is always open to
+                work with other musicians in growing his talent and skill in the industry.
             </p>
         </div>
         <div class="col-sm-6">
