@@ -12,13 +12,40 @@
 
 <style>
     .btnDel {
+        width: 100px;
+        height: 30px;
         background-color: palevioletred;
-        border-color: black;
+        border-width: 0.1pt;
+        border-radius: 5px;
+        border-style: solid;
+        border-color: palevioletred;
     }
+
+        .btnDel:hover {
+            box-shadow: 2px 0px 33px 0px rgba(240,0,0,0.75);
+            -webkit-box-shadow: 2px 0px 33px 0px rgba(240,0,0,0.75);
+            -moz-box-shadow: 2px 0px 33px 0px rgba(240,0,0,0.75);
+            border-color: red;
+            transition: ease-in 0.2s;
+        }
+
     .btnDownload {
-        background-color: lightgreen;
-        border-color: black;
+        width: 100px;
+        height: 30px;
+        background-color: #4CAF50;
+        border-style: solid;
+        border-color: #4CAF50;
+        border-width: 0.1pt;
+        border-radius: 5px;
     }
+
+        .btnDownload:hover {
+            box-shadow: 2px 0px 33px 0px rgba(46,222,125,0.75);
+            -webkit-box-shadow: 2px 0px 33px 0px rgba(46,222,125,0.75);
+            -moz-box-shadow: 2px 0px 33px 0px rgba(46,222,125,0.75);
+            border-color: green;
+            transition: ease-in 0.2s;
+        }
 </style>
 
 <h2>Files</h2>
@@ -43,9 +70,9 @@
             </td>
             <td>
                 <button class="btnDel">
-                   @Html.ActionLink("DELETE", "DeleteFile",
-                   new { fileName = file.FileName },
-                   new { @style = "text-decoration:none; color: White" })
+                    @Html.ActionLink("DELETE", "DeleteFile",
+                    new { fileName = file.FileName },
+                    new { @style = "text-decoration:none; color: White" })
                 </button>
             </td>
         </tr>

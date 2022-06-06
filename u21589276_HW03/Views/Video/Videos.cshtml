@@ -6,6 +6,45 @@
     ViewBag.Title = "Videos";
 }
 
+<style>
+    .btnDel {
+        width: 100px;
+        height: 30px;
+        background-color: palevioletred;
+        border-width: 0.1pt;
+        border-radius: 5px;
+        border-style: solid;
+        border-color: palevioletred;
+    }
+
+        .btnDel:hover {
+            box-shadow: 2px 0px 33px 0px rgba(240,0,0,0.75);
+            -webkit-box-shadow: 2px 0px 33px 0px rgba(240,0,0,0.75);
+            -moz-box-shadow: 2px 0px 33px 0px rgba(240,0,0,0.75);
+            border-color: red;
+            transition: ease-in 0.2s;
+        }
+
+    .btnDownload {
+        width: 100px;
+        height: 30px;
+        background-color: #4CAF50;
+        border-style: solid;
+        border-color: #4CAF50;
+        border-width: 0.1pt;
+        border-radius: 5px;
+    }
+
+        .btnDownload:hover {
+            box-shadow: 2px 0px 33px 0px rgba(46,222,125,0.75);
+            -webkit-box-shadow: 2px 0px 33px 0px rgba(46,222,125,0.75);
+            -moz-box-shadow: 2px 0px 33px 0px rgba(46,222,125,0.75);
+            border-color: green;
+            transition: ease-in 0.2s;
+        }
+</style>
+
+
 <h2>Video Files</h2>
 <p>...Media/Images</p>
 
@@ -18,15 +57,15 @@
             <div class="card" style="width: 30rem;">
 
                 <a href="~/Media/Videos/@file.FileName" data-fancybox="group" data-caption="This image has a caption 1">
-                    <video width="100%"  src="~/Media/Videos/@file.FileName?autoplay=0" frameborder="0" allowfullscreen></video>
+                    <video width="100%" src="~/Media/Videos/@file.FileName?autoplay=0" frameborder="0" allowfullscreen></video>
                 </a>
-                
+
 
                 <div class="card-body">
                     <p>@file.FileName</p>
 
                     <button class="btnDownload">
-                        @Html.ActionLink("Download", "DownloadFile", new { fileName = file.FileName },new { @style = "text-decoration:none; color: White" })
+                        @Html.ActionLink("Download", "DownloadFile", new { fileName = file.FileName }, new { @style = "text-decoration:none; color: White" })
                     </button>&nbsp;
                     <button class="btnDel">
                         @Html.ActionLink("DELETE", "DeleteFile", new { fileName = file.FileName }, new { @style = "text-decoration:none; color: White" })
