@@ -48,13 +48,13 @@
 <p>...Media/Images</p>
 
 <br />
-<div class="row" style="background-color: lightgrey; padding:20px; grid-row-gap:20px">
+<div class="row" style="background-color: lightgrey; padding:10px;">
 
     @foreach (FileModel file in Model)
     {
 
         <div class="col-sm-4">
-            <div class="card" style="width: 30rem;">
+            <div class="card" style="width: 90%;">
 
                 <a href="~/Media/Images/@file.FileName" data-fancybox="group" data-caption="">
                     <img src="~/Media/Images/@file.FileName" alt="img" width="100%" />
