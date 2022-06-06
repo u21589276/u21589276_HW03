@@ -17,44 +17,44 @@ namespace u21589276_HW03.Controllers
 
         //File Upload Recieve
         [HttpPost]
-        public ActionResult Index(HttpPostedFileBase fileupload, string fileTypeRad)//INSIDE HOME
+        public ActionResult Index(HttpPostedFileBase uploadFileOpt, string fileTypeRad)//INSIDE HOME
         {
             //if statement to determine which folder to upload the file to depending on the radioBtn selected
             if(fileTypeRad == "Document")
             {
                 //upoload to Document folder
-                if (fileupload != null && fileupload.ContentLength > 0)
+                if (uploadFileOpt != null && uploadFileOpt.ContentLength > 0)
                 {
-                    var fileName = Path.GetFileName(fileupload.FileName);
+                    var fileToSave = Path.GetFileName(uploadFileOpt.FileName);
 
-                    var path = Path.Combine(Server.MapPath("~/Media/Documents"), fileName);
+                    var saveInPath = Path.Combine(Server.MapPath("~/Media/Documents"), fileToSave);
 
-                    fileupload.SaveAs(path);
+                    uploadFileOpt.SaveAs(saveInPath);
                 }
                
             }
             else if(fileTypeRad == "Image")
             {
                 //upload to Image folder
-                if (fileupload != null && fileupload.ContentLength > 0)
+                if (uploadFileOpt != null && uploadFileOpt.ContentLength > 0)
                 {
-                    var fileName = Path.GetFileName(fileupload.FileName);
+                    var fileToSave = Path.GetFileName(uploadFileOpt.FileName);
 
-                    var path = Path.Combine(Server.MapPath("~/Media/Images"), fileName);
+                    var saveInPath = Path.Combine(Server.MapPath("~/Media/Images"), fileToSave);
 
-                    fileupload.SaveAs(path);
+                    uploadFileOpt.SaveAs(saveInPath);
                 }
             }
             else if (fileTypeRad == "Video")
             {
                 //upload to video folder
-                if (fileupload != null && fileupload.ContentLength > 0)
+                if (uploadFileOpt != null && uploadFileOpt.ContentLength > 0)
                 {
-                    var fileName = Path.GetFileName(fileupload.FileName);
+                    var fileToSave = Path.GetFileName(uploadFileOpt.FileName);
 
-                    var path = Path.Combine(Server.MapPath("~/Media/Videos"), fileName);
+                    var saveInPath = Path.Combine(Server.MapPath("~/Media/Videos"), fileToSave);
 
-                    fileupload.SaveAs(path);
+                    uploadFileOpt.SaveAs(saveInPath);
                 }
             }
 

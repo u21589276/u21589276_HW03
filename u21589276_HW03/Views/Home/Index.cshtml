@@ -18,14 +18,14 @@
 
     <div class="col-sm-4">
         <h4>Option Selection</h4><br />
-            <div class="form-horizontal">
+            <div class="form">
                 @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
                     <label>Document</label> <input type="radio" name="fileTypeRad" id="doc" value="Document" /><br />
                     <label>Image</label> <input type="radio" name="fileTypeRad" id="image" value="Image" /><br />
                     <label>Video</label> <input type="radio" name="fileTypeRad" id="vid" value="Video" /><br /><br />
 
-                    <input type="file" name="fileupload" /><br />
+                    <input type="file" name="uploadFileOpt" /><br />
                     <input type="submit" name="submit" value="Upload" />
 
                 }

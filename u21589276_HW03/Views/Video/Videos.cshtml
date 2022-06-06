@@ -25,12 +25,11 @@
                 <div class="card-body">
                     <p>@file.FileName</p>
 
-                    <button style="background-color: lightgreen; border-color: black; border-width: 0.1pt; border-radius: 10px; text-decoration: none;">
-                        @Html.ActionLink("Download", "DownloadFile", new { fileName = file.FileName })
+                    <button class="btnDownload">
+                        @Html.ActionLink("Download", "DownloadFile", new { fileName = file.FileName },new { @style = "text-decoration:none; color: White" })
                     </button>&nbsp;
-                    <button style="background-color: palevioletred; border-color: black; border-width: 0.1pt; border-radius: 10px; text-decoration:none; ">
-                        @Html.ActionLink("DELETE", "DeleteFile", new { fileName = file.FileName },
-                        new { onclick = "return confirm('Are you sure you wish to delete this?');" })
+                    <button class="btnDel">
+                        @Html.ActionLink("DELETE", "DeleteFile", new { fileName = file.FileName }, new { @style = "text-decoration:none; color: White" })
                     </button>
                 </div>
             </div>

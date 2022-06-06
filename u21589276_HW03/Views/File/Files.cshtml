@@ -10,6 +10,17 @@
     ViewBag.Title = "Files";
 }
 
+<style>
+    .btnDel {
+        background-color: palevioletred;
+        border-color: black;
+    }
+    .btnDownload {
+        background-color: lightgreen;
+        border-color: black;
+    }
+</style>
+
 <h2>Files</h2>
 <p>...u21589276_HW03/Media</p>
 
@@ -26,16 +37,15 @@
         <tr>
             <td>@file.FileName</td>
             <td>
-                <button style="background-color: lightgreen; border-color:black;">
-                    @Html.ActionLink("Download", "DownloadFile",
-                     new { fileName = file.FileName })
+                <button class="btnDownload">
+                    @Html.ActionLink("Download", "DownloadFile", new { fileName = file.FileName }, new { @style = "text-decoration:none; color: White" })
                 </button>
             </td>
             <td>
-                <button style="background-color:palevioletred ; border-color:black;">
+                <button class="btnDel">
                    @Html.ActionLink("DELETE", "DeleteFile",
                    new { fileName = file.FileName },
-                   new { onclick = "return confirm('Are you sure you wish to delete this?');" })
+                   new { @style = "text-decoration:none; color: White" })
                 </button>
             </td>
         </tr>

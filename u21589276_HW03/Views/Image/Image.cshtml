@@ -7,6 +7,43 @@
     ViewBag.Title = "Image";
 }
 
+<style>
+    .btnDel {
+        width: 100px;
+        height: 30px;
+        background-color: palevioletred;
+        border-width: 0.1pt;
+        border-radius: 5px;
+        border-style: solid;
+        border-color: palevioletred;
+    }
+    .btnDel:hover {
+        box-shadow: 2px 0px 33px 0px rgba(240,0,0,0.75);
+        -webkit-box-shadow: 2px 0px 33px 0px rgba(240,0,0,0.75);
+        -moz-box-shadow: 2px 0px 33px 0px rgba(240,0,0,0.75);
+        border-color: red;
+        transition: ease-in 0.2s;
+    }
+
+    .btnDownload {
+        width: 100px;
+        height: 30px;
+        background-color: #4CAF50;
+        border-style: solid;
+        border-color: #4CAF50;
+        border-width: 0.1pt;
+        border-radius: 5px;
+    }
+    .btnDownload:hover {
+        box-shadow: 2px 0px 33px 0px rgba(46,222,125,0.75);
+        -webkit-box-shadow: 2px 0px 33px 0px rgba(46,222,125,0.75);
+        -moz-box-shadow: 2px 0px 33px 0px rgba(46,222,125,0.75);
+        border-color: green;
+        transition: ease-in 0.2s;
+    }
+   
+</style>
+
 <h2>Image Files</h2>
 <p>...Media/Images</p>
 
@@ -15,6 +52,7 @@
 
     @foreach (FileModel file in Model)
     {
+
         <div class="col-sm-4">
             <div class="card" style="width: 30rem;">
                 <a href="~/Media/Images/@file.FileName" data-fancybox="group" data-caption="This image has a caption 1">
@@ -23,12 +61,12 @@
                 <div class="card-body">
                     <p>@file.FileName</p>
 
-                    <button style="background-color: green; border-color: black; border-width: 0.1pt; border-radius: 10px; text-decoration: none;">
-                        @Html.ActionLink("Download", "DownloadFile", new { fileName = file.FileName })
-                    </button>&nbsp;
-                    <button style="background-color: palevioletred; border-color: black; border-width: 0.1pt; border-radius: 10px; text-decoration:none; ">
-                        @Html.ActionLink("DELETE", "DeleteFile", new { fileName = file.FileName },
-                        new { onclick = "return confirm('Are you sure you wish to delete this?');" })
+                    <button class="btnDownload">
+                        @Html.ActionLink("Download", "DownloadFile", new { fileName = file.FileName }, new { @style = "text-decoration:none; color: White" })
+
+                    </button>&nbsp;&nbsp;
+                    <button class="btnDel">
+                        @Html.ActionLink("DELETE", "DeleteFile", new { fileName = file.FileName }, new { @style = "text-decoration:none; color: White" })
                     </button>
                 </div>
             </div>
