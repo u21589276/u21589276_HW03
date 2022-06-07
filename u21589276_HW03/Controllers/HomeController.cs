@@ -15,7 +15,7 @@ namespace u21589276_HW03.Controllers
             return View();
         }
 
-        //File Upload Recieve
+        //File Upload Recieved
         [HttpPost]
         public ActionResult Index(HttpPostedFileBase uploadFileOpt, string fileTypeRad)//INSIDE HOME
         {
