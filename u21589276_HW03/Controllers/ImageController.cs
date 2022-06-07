@@ -17,6 +17,7 @@ namespace u21589276_HW03.Controllers
 
             string[] filePath = Directory.GetFiles(Server.MapPath("~/Media/Images/"));
 
+            //the list of the files from the folder, taken from model and set to list
             List<FileModel> files = new List<FileModel>();
 
             foreach (string filePathimg in filePath)
@@ -29,20 +30,24 @@ namespace u21589276_HW03.Controllers
 
         public FileResult DownloadFile(string fileName)
         {
+            //find path of file and select to download it
             string filepath = Server.MapPath("~/Media/Images/") + fileName;
 
             byte[] bytes = System.IO.File.ReadAllBytes(filepath);
 
+            //returns the file information to be downloaded
             return File(bytes, "application/octet-stream", fileName);
         }
         public ActionResult DeleteFile(string fileName)
         {
+            //find path of file and select to delete it
             string filepath = Server.MapPath("~/Media/Images/") + fileName;
 
             byte[] bytes = System.IO.File.ReadAllBytes(filepath);
 
             System.IO.File.Delete(filepath);
 
+           //returns to the image.cshtml view
             return RedirectToAction("Image");
          
         }
