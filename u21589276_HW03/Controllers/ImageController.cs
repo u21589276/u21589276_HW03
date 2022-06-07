@@ -15,13 +15,13 @@ namespace u21589276_HW03.Controllers
         {
             //Fetch all files in the Folder (Directory).
 
-            string[] filePaths = Directory.GetFiles(Server.MapPath("~/Media/Images/"));
+            string[] filePath = Directory.GetFiles(Server.MapPath("~/Media/Images/"));
 
             List<FileModel> files = new List<FileModel>();
 
-            foreach (string filePath in filePaths)
+            foreach (string filePathimg in filePath)
             {
-                files.Add(new FileModel { FileName = Path.GetFileName(filePath) });
+                files.Add(new FileModel { FileName = Path.GetFileName(filePathimg) });
             }
             return View(files);
             
@@ -29,19 +29,19 @@ namespace u21589276_HW03.Controllers
 
         public FileResult DownloadFile(string fileName)
         {
-            string path = Server.MapPath("~/Media/Images/") + fileName;
+            string filepath = Server.MapPath("~/Media/Images/") + fileName;
 
-            byte[] bytes = System.IO.File.ReadAllBytes(path);
+            byte[] bytes = System.IO.File.ReadAllBytes(filepath);
 
             return File(bytes, "application/octet-stream", fileName);
         }
         public ActionResult DeleteFile(string fileName)
         {
-            string path = Server.MapPath("~/Media/Images/") + fileName;
+            string filepath = Server.MapPath("~/Media/Images/") + fileName;
 
-            byte[] bytes = System.IO.File.ReadAllBytes(path);
+            byte[] bytes = System.IO.File.ReadAllBytes(filepath);
 
-            System.IO.File.Delete(path);
+            System.IO.File.Delete(filepath);
 
             return RedirectToAction("Image");
          
