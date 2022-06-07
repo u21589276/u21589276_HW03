@@ -17,7 +17,7 @@ namespace u21589276_HW03.Controllers
 
             string[] filePath = Directory.GetFiles(Server.MapPath("~/Media/Images/"));
 
-            //the list of the files from the folder, taken from model and set to list
+            //the list of the files from the folder taken from model and set to list
             List<FileModel> files = new List<FileModel>();
 
             foreach (string filePathimg in filePath)
